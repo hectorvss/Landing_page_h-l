@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="H&L Studio — Building AI websites for those who are bored of blending in. Brand identity, web design, and creative services.">
+  <title>H&L Studio — Brand / Web / Creative</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Geist Mono from CDN -->
+  <style>
+    @font-face {
+      font-family: 'Geist Mono';
+      src: url('https://cdn.jsdelivr.net/npm/geist@1.2.2/dist/fonts/geist-mono/GeistMono-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist Mono';
+      src: url('https://cdn.jsdelivr.net/npm/geist@1.2.2/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    /* Work cards: less zoom on background images */
+    #work .work__item {
+      background-size: 100% auto !important;
+      background-position: center center !important;
+    }
+    /* Work cards: all text white for readability on image backgrounds */
+    #work .work__item span,
+    #work .work__item h3,
+    #work .work__item p {
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.55) !important;
+    }
+    /* Hero section: text and borders white on the gradient background */
+    #video-header h1,
+    #video-header span,
+    #video-header .video-header__label,
+    #video-header .video-header__cta-text {
+      color: #ffffff !important;
+    }
+    #video-header span[style*="border"] {
+      border-color: rgba(255, 255, 255, 0.55) !important;
+    }
+    #video-header .video-header__cta-arrow path {
+      stroke: #ffffff !important;
+    }
+    #video-header .video-header__overlay {
+      background-color: transparent !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== 1. NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <!-- K Logo -->
+      <a href="index.html" class="navbar__logo" id="nav-logo" style="text-decoration: none;">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 42px; color: var(--color-primary); letter-spacing: -1px;">H&L</span>
+      </a>
+
+      <!-- Links -->
+      <div class="navbar__actions">
+        <div class="navbar__lang-toggle-wrapper" style="display: flex; align-items: center; margin-right: 12px;">
+          <a href="#" class="navbar__lang-toggle navbar__lang-active">En</a>
+          <span class="navbar__lang-divider">/</span>
+          <a href="index_es.html" class="navbar__lang-toggle">Es</a>
+        </div>
+        <div class="navbar__links">
+          <a href="work.html" class="navbar__link" id="nav-work">Solutions</a>
+          <a href="about.html" class="navbar__link" id="nav-about">About</a>
+          <a href="pricing.html" class="navbar__link" id="nav-pricing">Pricing</a>
+          <a href="contact.html" class="navbar__link navbar__link--btn" id="nav-contact">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 2. VIDEO HEADER ========== -->
+  <section class="video-header" id="video-header">
+    <div class="video-header__bg" style="background-image: url('assets/Pink and Blue Glass Gradient Wallpaper.jpg'); background-size: cover; background-position: center;"></div>
+    <div class="video-header__overlay">
+      <!-- Top labels -->
+      <div class="video-header__labels">
+        <span class="video-header__label">AI Systems Studio</span>
+        <span class="video-header__label">Automation / Agents / Custom Software</span>
+        <span class="video-header__label">20—25</span>
+      </div>
+
+      <!-- Middle row (New Hero Content) -->
+      <div class="video-header__middle" style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 0 var(--sidebar-width);">
+        <h1 style="font-family: var(--font-heading); font-weight: var(--fw-semibold); font-size: 80px; line-height: 80px; letter-spacing: -4px; color: var(--color-primary); max-width: 900px; margin-bottom: 20px;">We build AI systems that answer, automate and scale.</h1>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">AI Agents</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">Voice</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">CRM</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">Workflows</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">Support</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 12px; border-radius: 20px;">Custom SaaS</span>
+        </div>
+      </div>
+
+      <!-- Bottom row -->
+      <div class="video-header__bottom">
+        <a href="contact.html" class="video-header__cta" id="cta-book-call">
+          <span class="video-header__cta-text">Book a Call</span>
+          <svg class="video-header__cta-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13L13 1M13 1H3M13 1V11" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#work" class="video-header__cta" id="cta-view-work" style="background: transparent; border-color: transparent;">
+          <span class="video-header__cta-text">Explore Solutions</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 3. HERO / INTRODUCTION ========== -->
+  <section class="hero" id="hero">
+    <!-- Left: Arrow -->
+    <div class="hero__left">
+      <svg class="hero__arrow-svg" viewBox="0 0 285 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 76H260M260 76L200 8M260 76L200 144" stroke="#0066FF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Right: Text -->
+    <div class="hero__right">
+      <!-- Plus icons top -->
+      <div class="hero__plus-row">
+        <div class="hero__plus">
+          <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 0V15M0 7.5H15" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="hero__plus">
+          <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 0V15M0 7.5H15" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="hero__heading" style="margin-bottom: 20px;">Not just websites. Systems that capture, respond, automate and operate.</h1>
+      <p style="font-family: var(--font-heading); font-size: 42px; color: var(--color-primary); letter-spacing: -1px; margin-top: 20px; max-width: 809px;">From simple workflows to voice agents and custom SaaS.</p>
+
+      <!-- Plus icons bottom -->
+      <div class="hero__plus-row hero__plus-row--bottom">
+        <div class="hero__plus" style="opacity: 0;">
+          <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 0V15M0 7.5H15" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="hero__plus" style="opacity: 0.17;">
+          <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 0V15M0 7.5H15" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. SOLUTIONS HIGHLIGHTS ========== -->
+  <section class="work" id="work">
+    <div class="work__header">
+      <h2 class="work__title">Solutions —<br>Highlights</h2>
+    </div>
+
+    <div class="work__grid">
+      <!-- Item 1 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/Colorful abstract.jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Clinics</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">AI Receptionist for Clinics</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Answers calls, captures patient details and books appointments automatically.</p>
+        </div>
+      </a>
+
+      <!-- Item 2 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/download (14).jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Support</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">WhatsApp FAQ Assistant</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Handles repetitive questions, captures leads and routes real conversations to the team.</p>
+        </div>
+      </a>
+
+      <!-- Item 3 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/download (15).jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">AI Agent</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">Lead Qualification Agent</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Filters inbound leads, scores intent and sends the best opportunities to sales.</p>
+        </div>
+      </a>
+
+      <!-- Item 4 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/download (16).jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">CRM</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">CRM + Follow-up Engine</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Captures leads, updates the CRM and runs automated follow-up sequences.</p>
+        </div>
+      </a>
+
+      <!-- Item 5 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/download (18).jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Ecommerce</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">Support Automation for Ecommerce</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Organizes repetitive tickets, suggests answers and routes urgent issues correctly.</p>
+        </div>
+      </a>
+
+      <!-- Item 6 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/download (23).jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Automation</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">Booking & Reminder System</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Confirms appointments, sends reminders and reduces no-shows.</p>
+        </div>
+      </a>
+
+      <!-- Item 7 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/n.jpg'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Custom SaaS</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">Internal Ops Dashboard</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Brings workflows, approvals and operational visibility into one system.</p>
+        </div>
+      </a>
+
+      <!-- Item 8 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/solution-2.png'); background-size: 100% auto; background-position: center; background-color: var(--color-primary);">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Custom SaaS</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">Custom Client Portal</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">A tailored system for clients, teams and automated operations.</p>
+        </div>
+      </a>
+
+      <!-- Item 9 -->
+      <a href="#" class="work__item" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/solution-9.png'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); border: 1px solid var(--color-primary); padding: 4px 10px; border-radius: 20px;">Voice</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); margin-bottom: 8px;">AI Call Agent for Local Businesses</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-primary); opacity: 0.8;">Handles inbound calls, qualifies intent and helps convert missed demand.</p>
+        </div>
+      </a>
+
+      <!-- Item 10 -->
+      <a href="#" class="work__item work__item--blueprint" style="padding: 30px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; background-image: url('assets/solution-10.png'); background-size: cover; background-position: center;">
+        <div><span style="font-family: var(--font-mono); font-size: 12px; color: var(--color-bg); border: 1px solid var(--color-bg); padding: 4px 10px; border-radius: 20px;">Agencies</span></div>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-bg); margin-bottom: 8px;">Onboarding Automation System</h3>
+          <p style="font-family: var(--font-heading); font-size: 14px; color: var(--color-bg); opacity: 0.8;">Turns every new client into a smooth, repeatable internal process.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  
+
+  <!-- ========== 5. OUR CLIENTS (Text) ========== -->
+  <section class="clients-text" id="about">
+    <div class="clients-text__left">
+      <h3 class="clients-text__label">Partnerships:</h3>
+    </div>
+    <div class="clients-text__right">
+      <p class="clients-text__heading">We partner with businesses ready to automate, respond faster and operate smarter.</p>
+    </div>
+  </section>
+
+  <!-- ========== 6. SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="services__left">
+      <h3 class="services__label">Services:</h3>
+    </div>
+    <div class="services__right">
+      <div class="services__grid">
+        <!-- Automate -->
+        <div class="services__item" style="border: none;">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-primary); letter-spacing: 0.3px; text-transform: uppercase;">Automate</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">CRM Automations</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Lead Routing</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Reminders</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Reporting</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Internal Workflows</span>
+        </div>
+
+        <!-- Assist -->
+        <div class="services__item" style="border: none; margin-top: 40px;">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-primary); letter-spacing: 0.3px; text-transform: uppercase;">Assist</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">AI Chatbots</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">WhatsApp Assistants</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Email Assistants</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">FAQ Bots</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Support Agents</span>
+        </div>
+
+        <!-- Operate -->
+        <div class="services__item" style="border: none; margin-top: 40px;">
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-primary); letter-spacing: 0.3px; text-transform: uppercase;">Operate</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Voice & Call Agents</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Booking Systems</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Sales Ops Systems</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Support Ops Systems</span>
+        </div>
+        <div class="services__item">
+          <span class="services__item-name">Custom SaaS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. TESTIMONIAL ========== -->
+  <section class="testimonial" id="testimonial">
+    <!-- Quote Mark -->
+    <div class="testimonial__quote-mark">
+      <svg class="testimonial__quote-svg" viewBox="0 0 160 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 112V67.2C0 47.04 3.73 31.64 11.2 21C18.93 10.36 31.27 3.36 48.2 0L54.6 14C44.47 16.8 37.1 21.23 32.5 27.3C28.17 33.37 26 40.37 26 48.3H54.6V112H0ZM105.4 112V67.2C105.4 47.04 109.13 31.64 116.6 21C124.33 10.36 136.67 3.36 153.6 0L160 14C149.87 16.8 142.5 21.23 137.9 27.3C133.57 33.37 131.4 40.37 131.4 48.3H160V112H105.4Z" fill="white"/>
+      </svg>
+    </div>
+
+    <!-- Content -->
+    <div class="testimonial__content">
+      <p class="testimonial__text">Their AI chatbot now handles repetitive questions instantly while our team focuses on closing more deals.</p>
+
+      <div class="testimonial__author">
+        <div class="testimonial__avatar" id="testimonial-avatar">
+          <!-- Placeholder avatar -->
+        </div>
+        <div class="testimonial__author-info">
+          <span class="testimonial__author-name">Charlie Shepherd</span>
+          <span class="testimonial__author-role">Founder – Epic Travel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 8. LOGO MARQUEE ========== -->
+  <section class="logo-marquee" id="clients-logos">
+    <div class="logo-marquee__header">
+      <h3 class="logo-marquee__title">Our Expertise:</h3>
+      <p class="logo-marquee__desc">Built for teams that want to automate faster and operate smarter. We design solutions for:</p>
+    </div>
+
+    <div class="logo-marquee__track-wrapper">
+      <div class="logo-marquee__track">
+        <!-- Set 1 -->
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Clinics</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Ecommerce</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Agencies</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Real Estate</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">SaaS</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Education</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Professional Services</span>
+        <!-- Duplicate for loop -->
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Clinics</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Ecommerce</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Agencies</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Real Estate</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">SaaS</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Education</span>
+        <span class="logo-marquee__item" style="font-family: var(--font-heading); font-size: 42px; font-weight: var(--fw-semibold); color: var(--color-primary); padding: 0 20px;">Professional Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 9. FOOTER ========== -->
+  <footer class="footer" id="contact">
+
+    <!-- Top: Text & Menus -->
+    <div class="footer__top">
+      <!-- Left: Info + Logo -->
+      <div class="footer__top-left">
+        <div class="footer__info">
+          <p class="footer__copyright">H&L 2026</p>
+          <p class="footer__desc">Need an automation, AI assistant or custom system? Let's map the right one for your business.</p>
+        </div>
+
+                <div class="footer__logo-large">
+          <span style="font-family: var(--font-heading); font-weight: 700; font-size: 100px; color: var(--color-primary); letter-spacing: -4px; line-height: 1;">H&L</span>
+        </div>
+
+        <div class="footer__plus-divider">
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 0V20M0 10H20" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right: Menus -->
+      <div class="footer__top-right">
+        <div class="footer__menus">
+          <div class="footer__menu">
+            <h4 class="footer__menu-title">Website:</h4>
+            <div class="footer__menu-items">
+              <a href="work.html" class="footer__menu-link" id="footer-work">
+                <span class="footer__menu-link-text">Solutions</span>
+                <svg class="footer__menu-link-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 16L17 1M17 1H5M17 1V13" stroke="#0066FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="about.html" class="footer__menu-link" id="footer-about">
+                <span class="footer__menu-link-text">About</span>
+                <svg class="footer__menu-link-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 16L17 1M17 1H5M17 1V13" stroke="#0066FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="pricing.html" class="footer__menu-link" id="footer-pricing">
+                <span class="footer__menu-link-text">Pricing</span>
+                <svg class="footer__menu-link-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 16L17 1M17 1H5M17 1V13" stroke="#0066FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="pricing.html#faq" class="footer__menu-link" id="footer-faq">
+                <span class="footer__menu-link-text">F&Q</span>
+                <svg class="footer__menu-link-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 16L17 1M17 1H5M17 1V13" stroke="#0066FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="contact.html" class="footer__menu-link" id="footer-contact">
+                <span class="footer__menu-link-text">Book a Call</span>
+                <svg class="footer__menu-link-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 16L17 1M17 1H5M17 1V13" stroke="#0066FF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <div class="footer__plus-divider" style="justify-content: flex-end;">
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 0V20M0 10H20" stroke="#0066FF" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle: Contact & Social -->
+    <div class="footer__middle">
+      <div class="footer__contact">
+        <div class="footer__contact-info">
+          <span class="footer__contact-label">Contact us:</span><br>
+          <a href="mailto:mike@mikekus.com" class="footer__contact-email">mike@mikekus.com</a>
+        </div>
+        <div class="footer__contact-tagline">
+          <svg class="footer__contact-tagline-arrow" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 8.5H17M17 8.5L10 1.5M17 8.5L10 15.5" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="footer__contact-tagline-text">AI Systems Studio</span>
+        </div>
+      </div>
+
+      <div class="footer__social">
+        <!-- X / Twitter -->
+        <a href="#" class="footer__social-link" id="social-x" aria-label="X (Twitter)">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.7 17.8L35.5 5H32.7L23.5 16.1L16.2 5H6L17.3 22.8L6 36.2H8.8L18.5 24.5L26.3 36.2H36.5L24.7 17.8ZM19.8 23L18.6 21.3L9.7 7H15L20.8 15.4L22 17.1L32.7 34.3H27.5L19.8 23Z" fill="#0066FF"/>
+          </svg>
+        </a>
+
+        <!-- Dribbble -->
+        <a href="#" class="footer__social-link" id="social-dribbble" aria-label="Dribbble">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 3C11.1 3 3 11.1 3 21C3 30.9 11.1 39 21 39C30.9 39 39 30.9 39 21C39 11.1 30.9 3 21 3ZM34.2 12.7C36.2 15.3 37.3 18.5 37.4 21.8C37 21.7 32.7 20.8 28.4 21.3C28.3 21 28.2 20.7 28.1 20.4C27.8 19.7 27.5 19 27.2 18.3C31.9 16.4 34 13 34.2 12.7ZM32.8 11.1C32.6 11.4 30.7 14.6 26.2 16.3C24.1 12.5 21.8 9.4 21.5 8.9C25.6 7.9 29.6 8.8 32.8 11.1ZM19.5 9.5C19.8 10 22.1 13.1 24.2 16.8C18.5 18.3 13.5 18.3 12.9 18.3C13.8 14.1 16.2 10.7 19.5 9.5ZM4.6 21.1C4.6 20.9 4.6 20.8 4.6 20.6C5.2 20.6 11.1 20.7 17.2 18.9C17.6 19.6 17.9 20.3 18.2 21.1C18 21.2 17.8 21.2 17.6 21.3C11.3 23.4 7.9 29 7.6 29.5C5.7 27 4.6 24.2 4.6 21.1ZM9.1 31.2C9.3 30.8 11.9 25.8 17.7 23.3C19.5 27.7 20.3 31.4 20.5 32.5C16.2 34.1 12 33.1 9.1 31.2ZM22.4 31.8C22.3 31 21.5 27.4 19.9 23.1C24 22.4 27.5 23.5 28 23.7C27.4 27.5 25.3 30.7 22.4 31.8Z" fill="#0066FF"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" class="footer__social-link" id="social-instagram" aria-label="Instagram">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 5.8C26.2 5.8 26.8 5.8 28.8 5.9C30.7 6 31.7 6.3 32.4 6.5C33.3 6.8 34 7.2 34.7 7.9C35.4 8.6 35.8 9.3 36.1 10.2C36.3 10.9 36.6 12 36.7 13.8C36.8 15.8 36.8 16.4 36.8 21.6C36.8 26.8 36.8 27.4 36.7 29.4C36.6 31.3 36.3 32.4 36.1 33C35.8 33.9 35.4 34.6 34.7 35.3C34 36 33.3 36.4 32.4 36.7C31.7 36.9 30.6 37.2 28.8 37.3C26.8 37.4 26.2 37.4 21 37.4C15.8 37.4 15.2 37.4 13.2 37.3C11.3 37.2 10.2 36.9 9.6 36.7C8.7 36.4 8 36 7.3 35.3C6.6 34.6 6.2 33.9 5.9 33C5.7 32.3 5.4 31.2 5.3 29.4C5.2 27.4 5.2 26.8 5.2 21.6C5.2 16.4 5.2 15.8 5.3 13.8C5.4 11.9 5.7 10.8 5.9 10.2C6.2 9.3 6.6 8.6 7.3 7.9C8 7.2 8.7 6.8 9.6 6.5C10.3 6.3 11.4 6 13.2 5.9C15.2 5.8 15.8 5.8 21 5.8ZM21 3C15.7 3 15.1 3 13 3.1C11 3.2 9.6 3.5 8.4 4C7.1 4.5 6 5.1 4.9 6.3C3.7 7.4 3.1 8.5 2.6 9.8C2.1 11 1.8 12.4 1.7 14.4C1.6 16.5 1.6 17.1 1.6 22.4C1.6 27.7 1.6 28.3 1.7 30.4C1.8 32.4 2.1 33.8 2.6 35C3.1 36.3 3.7 37.4 4.9 38.5C6 39.7 7.1 40.3 8.4 40.8C9.6 41.3 11 41.6 13 41.7C15.1 41.8 15.7 41.8 21 41.8C26.3 41.8 26.9 41.8 29 41.7C31 41.6 32.4 41.3 33.6 40.8C34.9 40.3 36 39.7 37.1 38.5C38.3 37.4 38.9 36.3 39.4 35C39.9 33.8 40.2 32.4 40.3 30.4C40.4 28.3 40.4 27.7 40.4 22.4C40.4 17.1 40.4 16.5 40.3 14.4C40.2 12.4 39.9 11 39.4 9.8C38.9 8.5 38.3 7.4 37.1 6.3C36 5.1 34.9 4.5 33.6 4C32.4 3.5 31 3.2 29 3.1C26.9 3 26.3 3 21 3Z" fill="#0066FF"/>
+            <path d="M21 11.5C15.5 11.5 11 16 11 21.5C11 27 15.5 31.5 21 31.5C26.5 31.5 31 27 31 21.5C31 16 26.5 11.5 21 11.5ZM21 28.7C17.1 28.7 13.8 25.5 13.8 21.5C13.8 17.6 17 14.3 21 14.3C24.9 14.3 28.2 17.5 28.2 21.5C28.2 25.4 25 28.7 21 28.7Z" fill="#0066FF"/>
+            <path d="M31.3 13.1C32.4 13.1 33.3 12.2 33.3 11.1C33.3 10 32.4 9.1 31.3 9.1C30.2 9.1 29.3 10 29.3 11.1C29.3 12.2 30.2 13.1 31.3 13.1Z" fill="#0066FF"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" class="footer__social-link" id="social-linkedin" aria-label="LinkedIn">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.5 5C7.3 5 5.5 6.8 5.5 9C5.5 11.2 7.3 13 9.5 13C11.7 13 13.5 11.2 13.5 9C13.5 6.8 11.7 5 9.5 5ZM6 15H13V37H6V15ZM22 15H15V37H22V25.5C22 19 30 18.5 30 25.5V37H37V23C37 12 24.5 12.4 22 18V15Z" fill="#0066FF"/>
+          </svg>
+        </a>
+
+        <!-- Contra -->
+        <a href="#" class="footer__social-link" id="social-contra" aria-label="Contra">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 4L4 13V29L21 38L38 29V13L21 4ZM21 7.5L34 14.5V27.5L21 34.5L8 27.5V14.5L21 7.5Z" fill="#0066FF"/>
+            <path d="M21 14L12 19V28L21 33L30 28V19L21 14Z" fill="#0066FF"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- KUS Large -->
+    <div class="footer__kus" style="padding: 0 var(--page-padding); margin-bottom: 40px; margin-top: 40px;">
+      <h2 style="font-family: var(--font-heading); font-size: 14vw; line-height: 0.8; color: var(--color-primary); margin: 0; letter-spacing: -0.05em;">H&L-studio</h2>
+    </div>
+
+    <!-- Base Bar -->
+    <div class="footer__base">
+      <a href="index.html" class="footer__base-logo" id="footer-logo" style="text-decoration: none;">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 42px; color: var(--color-primary); letter-spacing: -1px;">H&L</span>
+      </a>
+      <span class="footer__base-credit">H&L Studio</span>
+    </div>
+  </footer>
+
+  <!-- Smooth scroll JS -->
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Navbar background on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.style.boxShadow = '0 1px 20px rgba(0, 102, 255, 0.06)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
