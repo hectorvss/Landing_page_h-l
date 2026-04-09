@@ -64,14 +64,15 @@
       
       <form class="lead-capture" id="lead-capture-form">
         <div class="lead-capture__input-wrapper">
-          <input type="text" class="lead-capture__input" placeholder="Your email or phone number" required>
-          <button type="submit" class="lead-capture__btn">
+          <input type="text" class="lead-capture__input" placeholder="Your email or phone number" required id="lead-contact" name="contact">
+          <button type="submit" class="lead-capture__btn" id="lead-submit">
             <span>Request Contact</span>
             <svg class="lead-capture__btn-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
+        <div id="lead-status" class="lead-capture__status"></div>
         <p class="lead-capture__microcopy">We’ll reach out to you directly.</p>
       </form>
     </div>
@@ -260,6 +261,7 @@
     </div>
   </footer>
 
+  <script src="lead_capture.js"></script>
   <script>
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {

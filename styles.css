@@ -2047,6 +2047,35 @@ body.page-contact .navbar {
   opacity: 0.5;
 }
 
+.lead-capture__status {
+  height: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: 0;
+  transition: var(--transition);
+}
+
+.lead-capture__status.is-visible {
+  height: auto;
+  padding-top: 15px;
+}
+
+.lead-capture__status--success {
+  color: #28a745;
+}
+
+.lead-capture__status--error {
+  color: #dc3545;
+}
+
+.lead-capture__status--loading {
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
 /* Elsewhere Online */
 .elsewhere {
   background: var(--color-primary);
@@ -2555,6 +2584,38 @@ body.page-contact .navbar {
   border-bottom: var(--border-thin);
   display: flex;
   flex-direction: column;
+}
+
+.pricing-category--inverted {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-bottom: none;
+}
+
+.pricing-category--inverted .pricing-category__title,
+.pricing-category--inverted .pricing-category__desc,
+.pricing-category--inverted .pricing-item__name,
+.pricing-category--inverted .pricing-item__desc,
+.pricing-category--inverted .pricing-item__price-new {
+  color: var(--color-white);
+}
+
+.pricing-category--inverted .pricing-category__desc,
+.pricing-category--inverted .pricing-item__desc {
+  opacity: 0.9;
+}
+
+.pricing-category--inverted .pricing-item__price-original {
+  color: var(--color-white);
+  opacity: 0.5;
+}
+
+.pricing-category--inverted .pricing-item {
+  border-top: 1px solid rgba(255, 255, 255, 1);
+}
+
+.pricing-category--inverted .pricing-item:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .pricing-category__header {
