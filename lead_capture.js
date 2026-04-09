@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // CONFIGURATION
     // Replace this with your Google Apps Script Web App URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyl65a2SoRIq8OocH3cM1g-94LsLaD6-Oa1T8z7nMS9nytgmI1SlF92IWxtUg-EyIRE/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz3cqTJF5SmyrYSmCPt5F5Y6PjBE0sEZDCfgY1zw0YogLv_Y5Er2LZhjr9l9Hw4MHoK/exec';
 
     if (!form) return;
 
